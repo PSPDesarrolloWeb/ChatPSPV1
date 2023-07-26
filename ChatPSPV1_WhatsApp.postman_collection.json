@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "6a65e63e-8c67-44fd-a08f-e222b09a3265",
+		"name": "ChatPSPV1_WhatsApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28738159"
+	},
+	"item": [
+		{
+			"name": "Plantilla_inicial",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"messaging_product\": \"whatsapp\", \"to\": \"593968479276\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mensaje_personalizado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",    \r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"text\",\r\n    \"text\": {\r\n        \"preview_url\": false,\r\n        \"body\": \"Esta es una prueba de mensaje personalizado de ChatPSP V1\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Formato_Texto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",    \r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"text\",\r\n    \"text\": {\r\n        \"preview_url\": false,\r\n        \"body\": \"*Esta es una prueba de mensaje personalizado de ChatPSP V1 NEGRITA*;\\n_Esta es una prueba de mensaje personalizado de ChatPSP V1 CURSIVA_;\\n~Esta es una prueba de mensaje personalizado de ChatPSP V1 TACHADO~;\\n```Esta es una prueba de mensaje personalizado de ChatPSP V1 ARIAL```\"\r\n\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Localidad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"location\",\r\n    \"location\": {\r\n        \"latitude\": \"0.3392\",\r\n        \"longitude\": \"-78.1222\",\r\n        \"name\": \"Ibarra\",\r\n        \"address\": \"Ibarra, Imbabura, Ecuador\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AudioURL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"audio\",\r\n    \"audio\": {\r\n        \"link\": \"https://cdn.freesound.org/previews/697/697380_5674468-lq.mp3\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AudioID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"audio\",\r\n    \"audio\": {\r\n        \"id\": \"AUDIO_PRUEBA01\"  ///SE DEBERIA CAMBIAR EL VALOR DEL ID DE AUDIO A UN VALOR REAL///\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"document\",\r\n    \"document\": {\r\n        \"link\": \"https://eqpro.es/wp-content/uploads/2018/11/Ejemplo.pdf\",\r\n        \"caption\": \"Prueba de envio de documento\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Imagen",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"image\",\r\n    \"image\": {\r\n        \"link\": \"https://wallpapers.com/images/featured/whatsapp-3d9aa7qsppakwbww.jpg\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593968479276\",\r\n    \"type\": \"video\",\r\n    \"video\": {\r\n        \"link\": \"https://joy1.videvo.net/videvo_files/video/free/2016-12/large_watermarked/Code_flythough_loop_01_Videvo_preview.mp4\",\r\n        \"caption\": \"Prueba de envio de Video\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "URL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAJjO50pisUBANdJOBT06JqXhdCENZBt9U3lkPhd06YgR9ZBd2axXRd8E90D4QwxpCD5h5Ntb4lZCTKP3jgQZCrieTVXIZAYjsm8O0UEjaCdH11PdbO3vMlqPmKCD5aRSVFj9v83fHJE26NLjLEcjeyVQvf09zV4t47DqZBzVnuZAAJcAAoEiXKFCJwRNwRjxnHuXYosGyxnwZDZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"to\": \"593968479276\",\r\n    \"text\": {\r\n        \"preview_url\": true,\r\n        \"body\": \"Este video te gustará \\n https://www.youtube.com/shorts/06rQ3ZyWsI0 \\n *Que tengas un buen día*\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/110409482135058/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"110409482135058",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
